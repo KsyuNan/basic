@@ -10,7 +10,6 @@
 body {
     margin: 1.3em;
     font-family: 'DM Sans', sans-serif;
-    line-height: normal;
 }
 
 a {
@@ -34,8 +33,15 @@ section {
     margin: 1.2em;
 }
 
+//button
+
 .click-btn {
    margin: 2em 0;
+
+   i {
+    color: #fff;
+   }
+   
 }
 
 .btn-act {
@@ -60,8 +66,18 @@ section {
    font-size: 1em;
    background-color: var(--active-green);
    border-radius: 0.7em;
+   display: inline-block;
 }
 
+.download-btn {
+    display: inline-block;
+    margin: 0.5em 0;
+    color: var(--font-color-bold);
+    padding: 0.3em 1em;
+    background-color: var(--background-green);
+    border-radius: 1em;
+    text-transform: capitalize;
+}
 
 .navbar {
     display: flex;
@@ -72,7 +88,7 @@ nav {
     position: fixed;
     right: 0;
     top: 0;
-    background-color: --background-green;
+    background-color: var(--background-green);
     height: 100vh;
     width: 50%;
     z-index: 999;
@@ -89,12 +105,17 @@ nav {
         display: block;
         padding: .75em 2em;
         font-weight: 400;
+        color: var(--font-color-bold);
+        font-size: 2em;
        }
     }
+.logo {
+    margin: 1.2em;
+}
 
 .close {
     float: right;
-    margin: 2em;
+    margin:2.1em;
     width: 2.5em;
 }
 }
@@ -120,15 +141,15 @@ nav {
     width: 100%;
     background-color: var(--background-green);
     height: 100vh;  
-    text-align: center;
+  //  text-align: center;
 
     &-title {
        
         padding: 1em;
 
         h1 {
-                font-family: 'Rosario', sans-serif;
-                font-size: 1.5em;   
+             font-family: 'Rosario', sans-serif;
+             font-size: 1.5em;   
             }
     }
 
@@ -197,8 +218,13 @@ nav {
 
 .about__us {
      display: flex;
-     text-align: center;
+     text-align: center; 
+     position: relative;
 
+     svg {
+        position: absolute;
+        z-index: -1;
+     }
 
       &-img{ 
         img {
@@ -208,8 +234,7 @@ nav {
     }
 }
 
-.content__desc {
-    
+.content__desc {    
     svg {
       padding: 0.8em;
       border-radius: 50%;
@@ -225,6 +250,45 @@ nav {
 
     &-item:hover {
         background-color: var(--background-green);
+    }
+}
+
+//services
+
+.services {
+    background-color: var(--background-green);
+
+    &-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0em;
+        grid-row-gap: 0em;
+        transform: rotate(30deg);    
+        padding: 1.2em;
+
+        img {
+            width: 90%;
+            height: auto;
+            box-shadow: 2px 5px 27px -3px rgba(9, 166, 109, 0.18);
+        }
+
+        img:nth-child(odd) {
+            transform: translateY(5em)
+        }
+    }
+
+    &-desc {
+       position: relative;
+
+       img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 10em;
+        left: 9em;
+        
+       }
     }
 }
 
@@ -267,6 +331,44 @@ nav {
     color: orange;
 }
 
+//download 
+
+.download {
+
+    .download__img {
+        position: relative;
+
+        &-1, &-2 {
+            position: relative;
+            svg {
+                position: relative;
+            }
+
+            img {
+                width: 92%;
+                height: auto;
+                position: absolute;
+                z-index: 999;
+                top: 0.5em;
+                left: 0.6em;
+                border-radius: 2em;
+            }
+        }
+    }
+
+    .phone-img1 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .phone-img2 {
+        position: absolute;
+        display: block;
+    }
+
+
+
+}
 
 //footer
 
@@ -353,7 +455,7 @@ nav {
 }
 
 @media only screen and (min-width: 920px) {
-.menu {
+    .menu {
         display: none;
     }
 
@@ -386,6 +488,10 @@ nav {
             }
         }
 
+    .about__us {
+       
+            display: flex;
+    }
 }
 
 
